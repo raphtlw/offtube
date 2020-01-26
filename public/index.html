@@ -6,13 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>YouTube-Downloader</title>
     <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/index.js"></script>
   </head>
   <body>
     <div id="header">
       <h1>YouTube Downloader</h1>
     </div>
     <form autocomplete="off" action="send-url" method="GET" id="url-form">
-      <input type="text" name="url" id="url-input" placeholder="Video Link" />
+      <input
+        type="text"
+        name="url"
+        id="url-input"
+        placeholder="Video Link"
+        onsubmit="checkUrl()"
+      />
     </form>
     <!-- TODO: Add credits -->
     <!-- <div id="credits">
