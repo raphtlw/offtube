@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/raphtlw/YouTube-Downloader#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "youtube-dl": "^3.0.1"
+    "express": "^4.17.1"
   }
 }

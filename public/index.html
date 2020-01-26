@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>YouTube-Downloader</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
     <div id="header">
       <h1>YouTube Downloader</h1>
     </div>
-    <form action="" method="get" id="url-form">
-      <input type="text" name="" id="url-input", placeholder="Video Link">
+    <form autocomplete="off" action="send-url" method="GET" id="url-form">
+      <input type="text" name="url" id="url-input" placeholder="Video Link" />
     </form>
     <!-- TODO: Add credits -->
     <!-- <div id="credits">
