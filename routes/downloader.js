@@ -24,7 +24,10 @@ router.get('/', (req, res) => {
     res.header('Content-Disposition', `attachment; filename="${info.title}"`);
     ytdl(
       url,
-      { format: 'mp4' }
+      {
+        quality: 'highest',
+        format: 'mp4'
+      }
     ).pipe(res);
   });
 });
