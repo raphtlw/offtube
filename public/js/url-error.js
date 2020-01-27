@@ -1,0 +1,1 @@
+setTimeout(() => history.back(), 2000);
