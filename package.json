@@ -20,6 +20,7 @@
   "homepage": "https://github.com/raphtlw/YouTube-Downloader#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "ffbinaries": "^1.1.4",
     "ytdl-core": "^1.0.7"
   }
 }

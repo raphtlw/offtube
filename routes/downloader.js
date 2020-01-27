@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
       return info;
     }
   ).then((info) => {
-    res.header('Content-Disposition', `attachment; filename="${info.title}"`);
+    res.header('Content-Disposition', `attachment; filename="${info.title}.mp4"`);
     ytdl(
       url,
       {
@@ -29,6 +29,9 @@ router.get('/', (req, res) => {
         format: 'mp4'
       }
     ).pipe(res);
+  }).catch((err) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'url-error.html'));
+    console.log(err.message);
   });
 });
 
