@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+body {
+  background-color: rgb(209, 82, 82);
+}
+
 h1 {
   position: absolute;
   left: 50%;
