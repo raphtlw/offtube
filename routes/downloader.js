@@ -5,9 +5,6 @@ const ytdl = require('ytdl-core');
 
 const router = express.Router();
 
-// TODO: Download at best formats by default
-// TODO: Convert from any format to mp4 if possible
-
 // Routes
 
 router.get('/', (req, res) => {
