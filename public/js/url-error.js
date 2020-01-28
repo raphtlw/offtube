@@ -1,1 +1,1 @@
-setTimeout(() => history.back(), 2000);
+setTimeout(() => history.back(), 1000);
