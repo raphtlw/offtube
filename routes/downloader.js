@@ -27,8 +27,20 @@ router.get('/', (req, res) => {
       }
     ).pipe(res);
   }).catch((err) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'url-error.html'));
-    console.log(err);
+    if (err.code === 'ERR_INVALID_CHAR') {
+      res.header('Content-Disposition', `attachment; filename="video.mp4"`);
+      ytdl(
+        url,
+        {
+          quality: 'highest',
+          format: 'mp4'
+        }
+      ).pipe(res);
+    } else {
+      res.sendFile(path.join(__dirname, '..', 'public', 'url-error.html'));
+    }
+    console.log(err.message);
+    console.log(err.code);
   });
 });
 
