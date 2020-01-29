@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   const url = req.query.url
-  console.log(url);  // For testing
+  console.log(url);
 
   ytdl.getBasicInfo(url).then(
     (info) => {
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
     ).pipe(res);
   }).catch((err) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'url-error.html'));
-    console.log(err.message);
+    console.log(err);
   });
 });
 
