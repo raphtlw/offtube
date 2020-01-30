@@ -8,19 +8,6 @@ const router = express.Router();
 // Routes
 
 router.get('/', (req, res) => {
-
-  const download = (url, fileName) => {
-    res.header('Content-Disposition', `attachment; filename="${fileName}.mp4"`);
-    ytdl(
-      url,
-      {
-        quality: 'highest',
-        format: 'mp4'
-      }
-    ).pipe(res);
-    return;
-  }
-
   const url = req.query.url
   console.log(url);
 
@@ -31,10 +18,24 @@ router.get('/', (req, res) => {
       return info;
     }
   ).then((info) => {
-    download(url, `${info.title}.mp4`);
+    res.header('Content-Disposition', `attachment; filename="${info.title}.mp4"`);
+    ytdl(
+      url,
+      {
+        quality: 'highest',
+        format: 'mp4'
+      }
+    ).pipe(res);
   }).catch((err) => {
     if (err.code === 'ERR_INVALID_CHAR') {
-      download(url, 'video.mp4');
+      res.header('Content-Disposition', `attachment; filename="video.mp4"`);
+      ytdl(
+        url,
+        {
+          quality: 'highest',
+          format: 'mp4'
+        }
+      ).pipe(res);
     } else {
       res.sendFile(path.join(__dirname, '..', 'public', 'url-error.html'));
     }
