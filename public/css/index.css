@@ -5,18 +5,28 @@
 
 body {
   text-align: center;
-  background-color: rgb(209, 82, 82);
+  background-color: rgb(226, 105, 105);
 }
 
 #header {
   position: absolute;
-  left: 50%;
-  top: 30%;
+  left: 40%;
+  top: 25%;
   transform: translate(-50%, -50%);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: rgb(238, 238, 238);
+  text-align: left;
+}
+
+#header h1 {
+  font-size: 2.5rem;
+}
+
+#header h2 {
+  font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
+  color: rgba(0, 0, 0, 0.74);
 }
 
 #url-form {
@@ -24,21 +34,30 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 80vw;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#input-background {
   padding: 1rem 1.6rem;
   background-color: rgb(255, 133, 133);
   border-radius: 8px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.116);
+  width: 80%;
 }
 
 #url-input {
   background: none;
   border: none;
   outline: none;
-  width: 60vw;
   font-size: 0.98rem;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.767);
+  width: 100%;
 }
 
 #url-input::placeholder {
@@ -46,4 +65,27 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.349);
+}
+
+#url-form-submit {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.98rem 1.6rem;
+  background-color: rgb(255, 133, 133);
+  border-radius: 8px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.116);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  color: rgba(0, 0, 0, 0.685);
+  margin: 0rem 8px;
+  width: 13%;
+  overflow: hidden;
+}
+
+#url-form-submit:hover {
+  transform: translate(0, -1px);
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.192);
 }

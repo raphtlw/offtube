@@ -7,13 +7,25 @@
     <title>YouTube-Downloader</title>
     <link rel="stylesheet" href="./css/index.css" />
     <script src="./js/index.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins|Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="header">
       <h1>YouTube Downloader</h1>
+      <h2>
+        Warning: This project was created for educational purposes and it is
+        against the YouTube Terms of Service to download YouTube videos and
+        copyrighted videos.
+      </h2>
     </div>
     <form autocomplete="off" action="send-url" method="GET" id="url-form">
-      <input type="text" name="url" id="url-input" placeholder="Video Link" />
+      <div id="input-background">
+        <input type="text" name="url" id="url-input" placeholder="Video Link" />
+      </div>
+      <button type="submit" id="url-form-submit">Download</button>
     </form>
     <!-- TODO: Add credits -->
     <!-- <div id="credits">

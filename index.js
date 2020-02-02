@@ -6,7 +6,8 @@ const app = express();
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Downloader routes
+// Routes
+
 app.use('/send-url', require('./routes/downloader.js'));
 
 const PORT = process.env.PORT || 5000;
