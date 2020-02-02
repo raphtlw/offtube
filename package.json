@@ -1,7 +1,7 @@
 {
-  "name": "youtube-downloader",
+  "name": "youtube-offline",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple YouTube downloader.",
   "main": "index.js",
   "scripts": {
     "start": "node index",
@@ -9,18 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raphtlw/YouTube-Downloader.git"
+    "url": "git+https://github.com/raphtlw/YouTube-Offline.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/raphtlw/YouTube-Downloader/issues"
+    "url": "https://github.com/raphtlw/YouTube-Offline/issues"
   },
-  "homepage": "https://github.com/raphtlw/YouTube-Downloader#readme",
+  "homepage": "https://github.com/raphtlw/YouTube-Offline#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "ffbinaries": "^1.1.4",
     "ytdl-core": "^1.0.7"
   }
 }
