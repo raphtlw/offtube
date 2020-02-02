@@ -1,6 +1,6 @@
 # YouTube-Offline
 
-Simple YouTube downloader.
+Simple YouTube downloader
 
 ![Website preview](readme/website-demo.png)
 
