@@ -14,4 +14,4 @@ Feel free to take a look at the source code!
 
 [raphtlw](https://github.com/raphtlw)
 
-Made with ❤ using node.js
+Made with ❤ using express.js
