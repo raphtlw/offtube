@@ -2,7 +2,7 @@
 
 A simple YouTube downloader created with `node.js` and `ytdl-core`.
 
-![Website preview](readme/website-demo.png)
+![Website preview](github/website-demo.png)
 
 **This project was created for educational purposes.**
 
