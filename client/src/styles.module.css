@@ -1,0 +1,162 @@
+/*
+--- Fonts ---
+URL: https://fonts.google.com/specimen/Poppins?selection.family=Poppins:wght@400;500|Roboto+Mono:wght@400;500;700&query=poppin
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto+Mono:wght@400;500;700&display=swap');
+
+/* CSS Variables */
+:global(:root) {
+  --title-color: rgb(245, 245, 245);
+}
+
+:global(:root) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:global(body) {
+  background: rgb(243, 123, 123);
+}
+
+/*
+--- Animations ---
+Utilities:
+https://cubic-bezier.com
+*/
+.animateSmooth {
+  transition: 1s cubic-bezier(0, 0.54, 0, 0.99);
+}
+
+/* Title */
+.title {
+  position: absolute;
+  left: 40%;
+  top: 25%;
+  transform: translate(-50%, -50%);
+  font-family: 'Poppins', sans-serif;
+  color: var(--title-color);
+  text-align: left;
+}
+
+.title h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.title h2 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  color: rgba(20, 20, 20, 0.767);
+}
+
+/* Video URL box */
+.videoUrl {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoUrlBackground {
+  padding: 1rem 1.6rem;
+  background-color: rgb(255, 133, 133);
+  border-radius: 8px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.116);
+  width: 80%;
+}
+
+.videoUrlInput {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 0.98rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.658);
+  width: 100%;
+}
+
+.videoUrlInput::placeholder {
+  font-size: 0.98rem;
+  font-family: Helvetica, sans-serif;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.349);
+}
+
+.videoUrlSubmit {
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 1.1rem 1.6rem;
+  background-color: rgb(255, 133, 133);
+  border-radius: 8px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.116);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.726);
+  margin: 0rem 8px;
+  width: 14%;
+  overflow: hidden;
+}
+
+.videoUrlSubmit:hover {
+  transform: translate(0, -4px);
+  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.192);
+}
+
+/* Download Options popup */
+.downloadOptionsWrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.downloadOptions {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  background: rgb(255, 146, 146);
+  text-align: center;
+}
+
+.downloadOptions h1 {
+  margin: 1.2rem 3rem 0rem 3rem;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.829);
+}
+
+.downloadOptions button {
+  padding: 0.8rem 1.8rem;
+  margin: 1rem 0rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: rgb(255, 176, 176);
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+}
+
+.downloadOptions button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.212);
+}
+
+.downloadOptions button:active {
+  transform: scale(0.8);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}

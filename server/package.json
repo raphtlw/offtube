@@ -1,12 +1,13 @@
 {
-  "name": "server",
+  "name": "offtube-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend server for OffTube",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "keywords": [],
-  "author": "",
+  "author": "raphtlw",
   "license": "ISC"
 }

@@ -1,8 +1,8 @@
-# YouTube-Offline
+# OffTube
 
 A simple YouTube downloader created with `node.js` and `ytdl-core`.
 
-![Website preview](github/website-demo.png)
+![Website preview](.github/images/demo.png)
 
 **This project was created for educational purposes.**
 
@@ -14,4 +14,4 @@ Feel free to take a look at the source code!
 
 [raphtlw](https://github.com/raphtlw)
 
-Made with ❤ using express.js
+Made with ❤ using react and express
