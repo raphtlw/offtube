@@ -1,6 +1,6 @@
-# OffTube
+# [OffTube](https://offtube.now.sh)
 
-A simple YouTube downloader created with `node.js` and `ytdl-core`.
+A simple YouTube downloader created with `node.js`, `react.js` and `youtube-dl`.
 
 ![Website preview](.github/images/demo.png)
 

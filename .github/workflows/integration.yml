@@ -13,19 +13,19 @@ jobs:
       - name: Deploy
         run: now client --confirm --prod -t ${{ secrets.ZEIT_TOKEN }}
   
-  # deploy-to-heroku:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #     - name: Deploy
-  #       run: |
-  #         cd server
-  #         git init
-  #         git config user.name "Raphael Tang"
-  #         git config user.email "raphpb1912@gmail.com"
-  #         git add .
-  #         git commit -m "deploy"
-  #         git push --force https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/offtube-backend.git master
-  #         rm -rf .git
-  #         cd ..
+  deploy-to-heroku:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy
+        run: |
+          cd server
+          git init
+          git config user.name "Raphael Tang"
+          git config user.email "raphpb1912@gmail.com"
+          git add .
+          git commit -m "deploy"
+          git push --force https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/offtube-backend.git master
+          rm -rf .git
+          cd ..
