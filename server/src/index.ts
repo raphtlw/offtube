@@ -4,7 +4,8 @@ import fs from 'fs';
 import youtubedl from 'youtube-dl';
 
 const app = express();
-app.use(cors());
+const [, , args] = process.argv;
+app.use(cors({ origin: args[0] }));
 
 app.get('/', (req, res) => {
   res.send('Welcome to the OffTube API server');
