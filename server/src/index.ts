@@ -16,7 +16,7 @@ app.get('/download/video', (req, res) => {
   const video = youtubedl(
     url,
     ['-f', 'bestvideo[ext=mp4]+bestaudio[ext=m4a]'],
-    {}
+    { url }
   );
 
   video.on('info', info => {
