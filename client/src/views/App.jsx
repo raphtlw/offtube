@@ -14,7 +14,7 @@ export default function App() {
     <div>
       <Title />
       <VideoUrl
-        onSubmit={url => {
+        onSubmit={(url) => {
           setUrl(url);
           setDownloadOptions(true);
         }}
@@ -28,6 +28,7 @@ export default function App() {
           }}
           onAudio={() => {
             setDownloadOptions(false);
+            window.open(`${server}/download/audio?url=${url}`);
           }}
         />
       )}
