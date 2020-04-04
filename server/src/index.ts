@@ -15,15 +15,18 @@ app.get('/download/video', (req, res) => {
   console.log(`URL: ${url}`);
   const video = youtubedl(url, [], {});
 
+  let videoFilename = '';
+
   video.on('info', info => {
     console.log('Download started');
     console.log(`Filename: ${info._filename}`);
     console.log(`Size: ${info.size}`);
+    videoFilename = info._filename;
   });
 
-  video.pipe(fs.createWriteStream('video.mp4'));
+  video.pipe(fs.createWriteStream(videoFilename));
   video.on('end', () => {
-    res.download('video.mp4', err => fs.unlinkSync('video.mp4'));
+    res.download(videoFilename, err => fs.unlinkSync(videoFilename));
   });
 });
 

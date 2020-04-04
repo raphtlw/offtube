@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import fileDownload from 'js-file-download';
-import axios from 'axios';
 import '../styles.module.css';
 import Title from '../components/Title';
 import VideoUrl from '../components/VideoUrl';
@@ -26,13 +24,7 @@ export default function App() {
           closeDiv={() => setDownloadOptions(false)}
           onVideo={() => {
             setDownloadOptions(false);
-            axios({
-              url: `${server}/download/video?url=${url}`,
-              method: 'GET',
-              responseType: 'blob'
-            })
-              .then(res => fileDownload(res.data, 'video.mp4'))
-              .catch(err => console.log(err));
+            window.open(`${server}/download/video?url=${url}`);
           }}
           onAudio={() => {
             setDownloadOptions(false);
