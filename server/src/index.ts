@@ -20,7 +20,8 @@ app.get('/download/video', (req, res) => {
     {},
     (err, output) => {
       if (err) throw err;
-      console.log(output);
+      const filename = output[1].replace('[download] Destination: ', '');
+      res.download(filename, err => fs.unlinkSync(filename));
     }
   );
 
