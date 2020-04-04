@@ -29,7 +29,7 @@ app.get('/download/audio', (req, res) => {
   const { url } = req.query;
   console.log(`URL: ${url}`);
   youtubedl.exec(url, ['-x', '--audio-format', 'mp3'], {}, (err, output) => {
-    if (err) throw err;
+    if (err) console.log(err);
     console.log(output);
     const filename = output[3].replace('[ffmpeg] Destination: ', '');
     res.download(filename, (err) => fs.unlinkSync(filename));
