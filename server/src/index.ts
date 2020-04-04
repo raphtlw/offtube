@@ -13,18 +13,30 @@ app.get('/', (req, res) => {
 app.get('/download/video', (req, res) => {
   const { url } = req.query;
   console.log(`URL: ${url}`);
-  const video = youtubedl(url, [], {});
+  // const video = youtubedl(url, [], {});
 
-  video.on('info', info => {
-    console.log('Download started');
-    console.log(`Filename: ${info._filename}`);
-    console.log(`Size: ${info.size}`);
+  // video.on('info', info => {
+  //   console.log('Download started');
+  //   console.log(`Filename: ${info._filename}`);
+  //   console.log(`Size: ${info.size}`);
 
-    video.pipe(fs.createWriteStream(info._filename));
-    video.on('end', () => {
-      res.download(info._filename, err => fs.unlinkSync(info._filename));
-    });
-  });
+  //   video.pipe(fs.createWriteStream(info._filename));
+  //   video.on('end', () => {
+  //     res.download(info._filename, err => fs.unlinkSync(info._filename));
+  //   });
+  // });
+
+  youtubedl.exec(
+    url,
+    ['-f', 'bestvideo[ext=mp4]+bestaudio[ext=m4a]'],
+    {},
+    (err, output) => {
+      if (err) throw err;
+      console.log(output.join('\n'));
+    }
+  );
+
+  res.send('testing');
 });
 
 app.get('/download/audio', (req, res) => {});
