@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import path from 'path';
 import fs from 'fs';
 import youtubedl from 'youtube-dl';
 
@@ -25,6 +24,7 @@ app.get('/download/video', (req, res) => {
   video.pipe(fs.createWriteStream('video.mp4'));
   video.on('end', () => {
     res.download('video.mp4', err => fs.unlinkSync('video.mp4'));
+    res.end();
   });
 });
 

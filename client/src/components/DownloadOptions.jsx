@@ -36,12 +36,14 @@ export default function DownloadOptions(props) {
         <button
           style={{ marginRight: '1rem', marginLeft: '1rem' }}
           className={styles.animateSmooth}
+          onClick={props.onVideo}
         >
           Video
         </button>
         <button
           style={{ marginRight: '1rem' }}
           className={styles.animateSmooth}
+          onClick={props.onAudio}
         >
           Audio
         </button>
