@@ -5,8 +5,8 @@
   "description": "Backend server for OffTube",
   "main": "index.js",
   "scripts": {
-    "start": "node . https://offtube.now.sh",
-    "dev": "nodemon src/index.ts http://localhost:3000",
+    "start": "node .",
+    "dev": "nodemon src/index.ts",
     "build": "tsc && terser build/*.js -o index.js && rm -rf build"
   },
   "keywords": [],

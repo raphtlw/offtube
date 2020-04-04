@@ -4,8 +4,7 @@ import fs from 'fs';
 import youtubedl from 'youtube-dl';
 
 const app = express();
-const [, , args] = process.argv;
-app.use(cors({ origin: args[0] }));
+app.use(cors({ origin: 'https://coronastats.now.sh' }));
 
 app.get('/', (req, res) => {
   res.send('Welcome to the OffTube API server');
