@@ -18,9 +18,9 @@ export default function VideoUrl(props) {
           className={styles.videoUrlInput}
           type='text'
           value={url}
-          onChange={e => changeUrl(e.target.value)}
+          onChange={(e) => changeUrl(e.target.value)}
           placeholder='Video link'
-          onKeyPress={e => {
+          onKeyPress={(e) => {
             if (e.key === 'Enter') {
               submitUrl();
             }
@@ -31,7 +31,7 @@ export default function VideoUrl(props) {
         className={multiClass(styles.videoUrlSubmit, styles.animateSmooth)}
         onClick={submitUrl}
       >
-        Download
+        {props.buttonText}
       </button>
     </div>
   );
