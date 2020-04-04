@@ -15,7 +15,8 @@ app.get('/download/video', (req, res) => {
   console.log(`URL: ${url}`);
   const video = youtubedl(
     url,
-    ['-f', 'bestvideo[ext=mp4]+bestaudio[ext=m4a]'],
+    [],
+    // ['-f', 'bestvideo[ext=mp4]+bestaudio[ext=m4a]'],
     {}
   );
 
