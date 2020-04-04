@@ -24,7 +24,6 @@ app.get('/download/video', (req, res) => {
   video.pipe(fs.createWriteStream('video.mp4'));
   video.on('end', () => {
     res.download('video.mp4', err => fs.unlinkSync('video.mp4'));
-    res.end();
   });
 });
 
