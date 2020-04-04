@@ -39,8 +39,7 @@ app.get('/download/audio', (req, res) => {
     ],
     {},
     (err, output) => {
-      if (err) console.error(err);
-      console.log(output);
+      if (err) throw err;
       const filename = output[3].replace('[ffmpeg] Destination: ', '');
       res.download(filename, (err) => fs.unlinkSync(filename));
     }
