@@ -20,7 +20,7 @@ app.get('/download/video', (req, res) => {
     {},
     (err, output) => {
       if (err) throw err;
-      console.log(output.join(''));
+      console.log(output);
     }
   );
 
