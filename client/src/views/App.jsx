@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import fileDownload from 'js-file-download';
+import axios from 'axios';
 import '../styles.module.css';
 import Title from '../components/Title';
 import VideoUrl from '../components/VideoUrl';
 import DownloadOptions from '../components/DownloadOptions';
-const axios = require('axios');
 
 const server = 'https://offtube-backend.herokuapp.com';
 
@@ -24,22 +25,17 @@ export default function App() {
         <DownloadOptions
           closeDiv={() => setDownloadOptions(false)}
           onVideo={() => {
-            console.log('Download started');
+            setDownloadOptions(false);
             axios({
               url: `${server}/download/video?url=${url}`,
               method: 'GET',
               responseType: 'blob'
             })
-              .then(res => {
-                window.open(res.data);
-              })
+              .then(res => fileDownload(res.data, 'video.mp4'))
               .catch(err => console.log(err));
           }}
           onAudio={() => {
-            axios
-              .get(`${server}/download/audio?url=${url}`)
-              .then(res => window.open(res))
-              .catch(err => console.log(err));
+            setDownloadOptions(false);
           }}
         />
       )}
