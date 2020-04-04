@@ -28,12 +28,23 @@ app.get('/download/video', (req, res) => {
 app.get('/download/audio', (req, res) => {
   const { url } = req.query;
   console.log(`URL: ${url}`);
-  youtubedl.exec(url, ['-x', '--audio-format', 'mp3'], {}, (err, output) => {
-    if (err) console.log(err);
-    console.log(output);
-    const filename = output[3].replace('[ffmpeg] Destination: ', '');
-    res.download(filename, (err) => fs.unlinkSync(filename));
-  });
+  youtubedl.exec(
+    url,
+    [
+      '-x',
+      '--audio-format',
+      'mp3',
+      '--ffmpeg-location',
+      require('ffmpeg-static'),
+    ],
+    {},
+    (err, output) => {
+      if (err) console.error(err);
+      console.log(output);
+      const filename = output[3].replace('[ffmpeg] Destination: ', '');
+      res.download(filename, (err) => fs.unlinkSync(filename));
+    }
+  );
 });
 
 const PORT = process.env.PORT || 5000;
