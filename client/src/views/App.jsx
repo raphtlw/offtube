@@ -32,7 +32,12 @@ export default function App() {
       <VideoUrl
         onSubmit={(url) => {
           setUrl(url);
-          setDownloadOptions(true);
+          if (url.includes('youtube.com/')) {
+            setDownloadOptions(true);
+          } else {
+            setDownloadButton('Invalid URL');
+            setTimeout(() => setDownloadButton('Download'), 1000);
+          }
         }}
         buttonText={downloadButton}
       />
