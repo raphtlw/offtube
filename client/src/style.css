@@ -5,17 +5,17 @@ URL: https://fonts.google.com/specimen/Poppins?selection.family=Poppins:wght@400
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto+Mono:wght@400;500;700&display=swap');
 
 /* CSS Variables */
-:global(:root) {
+:root {
   --title-color: rgb(245, 245, 245);
 }
 
-:global(:root) {
+:root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:global(body) {
+body {
   background: rgb(243, 123, 123);
 }
 
@@ -24,12 +24,12 @@ URL: https://fonts.google.com/specimen/Poppins?selection.family=Poppins:wght@400
 Utilities:
 https://cubic-bezier.com
 */
-.animateSmooth {
+.animate-smooth {
   transition: 1s cubic-bezier(0, 0.54, 0, 0.99);
 }
 
 /* Title */
-.title {
+.Title {
   position: absolute;
   left: 40%;
   top: 25%;
@@ -39,19 +39,19 @@ https://cubic-bezier.com
   text-align: left;
 }
 
-.title h1 {
+.Title h1 {
   font-size: 2.5rem;
   font-weight: 500;
 }
 
-.title h2 {
+.Title h2 {
   font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
   color: rgba(20, 20, 20, 0.767);
 }
 
 /* Video URL box */
-.videoUrl {
+.VideoUrl {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -63,7 +63,7 @@ https://cubic-bezier.com
   align-items: center;
 }
 
-.videoUrlBackground {
+.VideoUrl-background {
   padding: 1rem 1.6rem;
   background-color: rgb(255, 133, 133);
   border-radius: 8px;
@@ -71,7 +71,7 @@ https://cubic-bezier.com
   width: 80%;
 }
 
-.videoUrlInput {
+.VideoUrl input {
   background: none;
   border: none;
   outline: none;
@@ -82,14 +82,14 @@ https://cubic-bezier.com
   width: 100%;
 }
 
-.videoUrlInput::placeholder {
+.VideoUrl input::placeholder {
   font-size: 0.98rem;
   font-family: Helvetica, sans-serif;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.349);
 }
 
-.videoUrlSubmit {
+.VideoUrl-submit {
   font-family: sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
@@ -106,18 +106,18 @@ https://cubic-bezier.com
   overflow: hidden;
 }
 
-.videoUrlSubmit:hover {
+.VideoUrl-submit:hover {
   transform: translate(0, -2px);
   box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.192);
 }
 
-.videoUrlSubmit:active {
+.VideoUrl-submit:active {
   transform: translate(0, 0);
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }
 
 /* Download Options popup */
-.downloadOptionsWrapper {
+.DownloadOptions-wrapper {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -128,7 +128,7 @@ https://cubic-bezier.com
   margin: auto;
 }
 
-.downloadOptions {
+.DownloadOptions {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -137,7 +137,7 @@ https://cubic-bezier.com
   text-align: center;
 }
 
-.downloadOptions h1 {
+.DownloadOptions h1 {
   margin: 1.2rem 3rem 0rem 3rem;
   font-family: sans-serif;
   font-size: 1.5rem;
@@ -145,7 +145,7 @@ https://cubic-bezier.com
   color: rgba(0, 0, 0, 0.829);
 }
 
-.downloadOptions button {
+.DownloadOptions button {
   padding: 0.8rem 1.8rem;
   margin: 1rem 0rem;
   outline: none;
@@ -156,12 +156,12 @@ https://cubic-bezier.com
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
 }
 
-.downloadOptions button:hover {
+.DownloadOptions button:hover {
   transform: scale(1.1);
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.212);
 }
 
-.downloadOptions button:active {
+.DownloadOptions button:active {
   transform: scale(0.8);
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }

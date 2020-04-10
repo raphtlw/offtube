@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import '../styles.module.css';
+import '../style.css';
 import Title from '../components/Title';
 import VideoUrl from '../components/VideoUrl';
 import DownloadOptions from '../components/DownloadOptions';

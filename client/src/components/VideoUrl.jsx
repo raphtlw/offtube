@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import multiClass from '../lib/multiClass';
-
-import styles from '../styles.module.css';
 
 export default function VideoUrl(props) {
   const [url, changeUrl] = useState('');
@@ -12,10 +9,9 @@ export default function VideoUrl(props) {
   };
 
   return (
-    <div className={styles.videoUrl}>
-      <div className={styles.videoUrlBackground}>
+    <div className='VideoUrl'>
+      <div className='VideoUrl-background'>
         <input
-          className={styles.videoUrlInput}
           type='text'
           value={url}
           onChange={(e) => changeUrl(e.target.value)}
@@ -27,10 +23,7 @@ export default function VideoUrl(props) {
           }}
         />
       </div>
-      <button
-        className={multiClass(styles.videoUrlSubmit, styles.animateSmooth)}
-        onClick={submitUrl}
-      >
+      <button className='VideoUrl-submit animate-smooth' onClick={submitUrl}>
         {props.buttonText}
       </button>
     </div>

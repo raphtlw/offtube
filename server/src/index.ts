@@ -18,7 +18,7 @@ app.get('/download/video', (req, res) => {
     ['-f', 'bestvideo[ext=mp4]+bestaudio[ext=m4a]'],
     {},
     (err, output) => {
-      if (err) throw err;
+      if (err) console.log(err);
       const filename = output[1].replace('[download] Destination: ', '');
       res.download(filename, (err) => fs.unlinkSync(filename));
     }
@@ -39,7 +39,7 @@ app.get('/download/audio', (req, res) => {
     ],
     {},
     (err, output) => {
-      if (err) throw err;
+      if (err) console.log(err);
       const filename = output[3].replace('[ffmpeg] Destination: ', '');
       res.download(filename, (err) => fs.unlinkSync(filename));
     }
