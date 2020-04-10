@@ -15,7 +15,7 @@ app.get('/download/video', (req, res) => {
   console.log(`URL: ${url}`);
   youtubedl.exec(
     url as string,
-    ['-f', 'bestvideo[ext=mp4]+bestaudio[ext=m4a]'],
+    ['-f', 'bestvideo[ext=mp4]+bestaudio[ext=m4a]', require('ffmpeg-static')],
     {},
     (err, output) => {
       if (err) console.log(err);
