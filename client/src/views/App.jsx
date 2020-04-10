@@ -47,12 +47,18 @@ export default function App() {
           onVideo={() => {
             setDownloadOptions(false);
             downloading();
-            window.open(`${server}/download/video?url=${url}`);
+            const downloadWindow = window.open(
+              `${server}/download/video?url=${url}`
+            );
+            downloadWindow.blur();
           }}
           onAudio={() => {
             setDownloadOptions(false);
             downloading();
-            window.open(`${server}/download/audio?url=${url}`);
+            const downloadWindow = window.open(
+              `${server}/download/audio?url=${url}`
+            );
+            downloadWindow.blur();
           }}
         />
       )}
