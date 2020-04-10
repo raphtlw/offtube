@@ -14,7 +14,7 @@ app.get('/download/video', (req, res) => {
   const { url } = req.query;
   console.log(`URL: ${url}`);
   youtubedl.exec(
-    url,
+    url as string,
     ['-f', 'bestvideo[ext=mp4]+bestaudio[ext=m4a]'],
     {},
     (err, output) => {
@@ -29,7 +29,7 @@ app.get('/download/audio', (req, res) => {
   const { url } = req.query;
   console.log(`URL: ${url}`);
   youtubedl.exec(
-    url,
+    url as string,
     [
       '-x',
       '--audio-format',
